@@ -104,16 +104,14 @@ void Joueur::addPokedex(Poisson p)
     j_pokedex.push_front(p);
 }
 
-
-
 void Joueur::parcourPokedex()
 {
     int numPok=0;
-   for(auto & p : j_pokedex)
-   {
-       numPok+=1;
-       p.getInfo(p, numPok);
-   }
+    for(auto & p : j_pokedex)
+    {
+        numPok+=1;
+        p.getInfo(p, 0);
+    }
 }
 
 Poisson Joueur::selecPoisson(int a)
