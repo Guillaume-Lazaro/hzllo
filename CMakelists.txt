@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.0)
+
+project(hello)
+
+# Crée des variables avec les fichiers à compiler
+set(SRCS
+    helloworld.cpp
+    helloworld2.cpp
+)
+    
+set(HEADERS
+    helloworld2.hpp
+)
+
+# On indique que l'on veut un exécutable "hello" compilé à partir des fichiers décrits par les variables SRCS et HEADERS
+add_executable(hello ${SRCS} ${HEADERS})
