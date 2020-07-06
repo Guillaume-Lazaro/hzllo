@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.0.0)
+project(hello VERSION 0.1.0)
 
-project(hello)
+include(CTest)
+enable_testing()
 
 # Crée des variables avec les fichiers à compiler
 set(SRCS
@@ -14,3 +16,7 @@ set(HEADERS
 
 # On indique que l'on veut un exécutable "hello" compilé à partir des fichiers décrits par les variables SRCS et HEADERS
 add_executable(hello ${SRCS} ${HEADERS})
+
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
