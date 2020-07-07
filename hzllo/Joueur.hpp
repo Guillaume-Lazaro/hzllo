@@ -51,61 +51,33 @@ class Joueur
     void addCanneV(Canne v);
     void upBateau(Bateau b);
     
-    
-    
-    
     Poisson getPoissonPoke(int a);
     void addPoissonPoke(Poisson p);
     void parcoutDex();
     int tailTab();
     int verifyDex(Poisson p);
     
-    
     Poisson getPoissonRes(int a);
-    
 
     void addPoissonTab(Poisson p);
 
-
     int getTailleTabTournois();
-    
     void supPoissonTournois();
 
-
-    
-    
     
     void addAppatTab(int id);
-
     int getTailleTabAppat();
-
     void supAppat();
-    
     void addQttAppat(int id);
-    
     int verifyAppat(int id);
-
     void listZoneAppat(int zone);
-    
     int supQttAppat(int id);
     
-    
-    
     Muse getMuse();
-    
     void addMuse(Muse m);
-    
-    
-    
-    
-    
-    
-    
-    
    
     private:
-
-    //atribut
+    //attribut
     std::string j_nom;
     float j_gold;
     
@@ -115,23 +87,11 @@ class Joueur
     Muse j_muse;
     
     //Tournois j_tournois;
-    
     std::list <Poisson> j_pokedex;
-    
     std::vector <Poisson> j_captureTab;
-    
     std::vector <Poisson> j_tournoisTab;
-    
     std::vector <Appat> j_appatTab;
-    /*
-    std::list <Appat> j_listeAppat;
-
-    
-    */
-
-    
-    
+    // std::list <Appat> j_listeAppat;
 };
-
 
 #endif /* Joueur_hpp */

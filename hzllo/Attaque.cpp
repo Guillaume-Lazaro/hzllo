@@ -20,45 +20,38 @@ using namespace std;
 Attaque::Attaque(int a,Canne c)
 {
     if(a==1)
-        {
-            a_nom="laisse de la moue";
-            a_x=0;
-            a_type=0;
-        }
+    {
+        a_nom="laisse de la moue";
+        a_x=0;
+        a_type=0;
+    }
     
     if(a==2)
-        {
-            a_nom="fatigue";
-            a_x=c.getForce();
-            a_type=1;
-        }
+    {
+        a_nom="fatigue";
+        a_x=c.getForce();
+        a_type=1;
+    }
     
     if(a==3)
-        {
-            a_nom="mouline";
-            a_x=c.getVit();
-            a_type=2;
-        }
+    {
+        a_nom="mouline";
+        a_x=c.getVit();
+        a_type=2;
+    }
     
     if(a==4)
-        {
-            a_nom="tante de sortir le poisson";
-            a_x=c.getForce()+c.getVit();
-            a_type=3;
-        }
+    {
+        a_nom="tante de sortir le poisson";
+        a_x=c.getForce()+c.getVit();
+        a_type=3;
+    }
 }
 
  
- 
- 
- 
-
-
 //constructeur attaque poisson
- 
 Attaque::Attaque(int a,Poisson p)
 {
-    
     if(a==1)
     {
         a_type=p.getType();
@@ -75,33 +68,28 @@ Attaque::Attaque(int a,Poisson p)
             a_x=p.getVit();
         }
  
- 
- 
- 
         if(a_type==3)
         {
             srand((unsigned int)time(0));
             a_type= 1 + rand() % 2;
-            
  
             if(a_type == 1)
-                {
-                    a_nom="tire";
-                    a_x=p.getForce();
-                }
+            {
+                a_nom="tire";
+                a_x=p.getForce();
+            }
             
             if(a_type ==2)
-                {
-                    a_nom="tente de s'echaper";
-                    a_x=p.getVit();
-                }
-            
+            {
+                a_nom="tente de s'echapper";
+                a_x=p.getVit();
+            }
         }
     }
     
     else if(a==2)
     {
-        a_nom="laisse de la moue";
+        a_nom="laisse du mou";
         a_x=0;
         a_type=0;
     }
@@ -112,13 +100,10 @@ Attaque::Attaque(int a,Poisson p)
 
 
 //destructeur
-
 Attaque::~Attaque()
 {
    
 }
-
-
 
 //methodes
 int Attaque::getType()
