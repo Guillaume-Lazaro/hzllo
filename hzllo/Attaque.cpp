@@ -21,7 +21,7 @@ Attaque::Attaque(int a,Canne c)
 {
     if(a==1)
     {
-        a_nom="laisse de la moue";
+        a_nom="laisse du mou";
         a_x=0;
         a_type=0;
     }
@@ -42,7 +42,7 @@ Attaque::Attaque(int a,Canne c)
     
     if(a==4)
     {
-        a_nom="tante de sortir le poisson";
+        a_nom="tente de sortir le poisson";
         a_x=c.getForce()+c.getVit();
         a_type=3;
     }

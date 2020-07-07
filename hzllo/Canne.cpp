@@ -23,20 +23,15 @@ Canne::Canne()
 
 Canne::Canne(int a,int b)
 {
-   c_id=a*b;
-   //combat
+    c_id=a*b;
+    //combat
     c_prix=4*a*b*a*b*a*b;
-   c_force=4*a*a;
-   c_vit=3*b*b;
+    c_force=4*a*a;
+    c_vit=3*b*b;
 }
 
 //destructeur
-
-Canne::~Canne()
-{
-   
-}
-
+Canne::~Canne() { }
 
 int Canne::getForce()
 {
