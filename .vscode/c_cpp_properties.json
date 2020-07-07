@@ -13,7 +13,7 @@
             "windowsSdkVersion": "8.1",
             "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
             "cStandard": "c11",
-            "cppStandard": "c++11",
+            "cppStandard": "c++17",
             "intelliSenseMode": "${default}",
             "browse": {
                 "path": [

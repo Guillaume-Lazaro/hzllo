@@ -107,7 +107,7 @@ void Joueur::addPokedex(Poisson p)
 void Joueur::parcourPokedex()
 {
     int numPok=0;
-    for(auto & p : j_pokedex)
+    for(auto& p : j_pokedex)
     {
         numPok+=1;
         p.getInfo(p, 0);
@@ -118,7 +118,7 @@ Poisson Joueur::selecPoisson(int a)
 {
     int numPok=0;
     Poisson monpoisson;
-   for(auto & p : j_pokedex)
+   for(auto& p : j_pokedex)
    {
        numPok+=1;
        if(numPok==a)

@@ -1,36 +1,21 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(hzllo VERSION 0.1.0)
 
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 include(CTest)
 enable_testing()
 
-# Crée des variables avec les fichiers à compiler
-# set(SRCS
-#     helloworld.cpp
-#     helloworld2.cpp
-# )
 
-#Génération de la liste des fichiers sources
-# file(
-#     GLOB
-#     ${SRCS}
-#     *.cpp
-# )
-
-file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/hzllo/src/*.cpp)
-    
-# set(HEADERS
-#     helloworld2.hpp
-# )
-
-# On indique que l'on veut un exécutable "hello" compilé à partir des fichiers décrits par les variables SRCS et HEADERS
-# add_executable(hzllo ${source_files})
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/hzllo/*.cpp)
 
 add_executable(
     hzllo
     ${SRC_FILES}
 )
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
