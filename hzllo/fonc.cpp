@@ -13,15 +13,7 @@
 
 using namespace std;
 
-/*
-{
-   
-}
-*/
-
-
 void introTexte()
-
 {
     cout<<"Une journée de plus passée au bureau ..."<<endl;
     cin.ignore();
