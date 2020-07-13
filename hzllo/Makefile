@@ -1,15 +1,20 @@
 CXX = g++
-CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
-LDFLAGS =  -fsanitize=address
+CXXFLAGS = -pedantic -std=c++11
+LDFLAGS = -lgdi32
 
-SRC = 
+SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
 EXEC = hzllo
 
 all: $(EXEC)
 
-$(EXEC): $(OBJ)
-	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
+# $(EXEC): $(OBJ)
+# 	$(CXX) -o $@ $^
+hzllo: $(OBJ)
+	$(CXX) -o $(EXEC) $^ $(LDFLAGS)
+
+%.o: %.cpp
+	$(CXX) -c -o $@ $^ $(CXXFLAGS)
 
 clean:
 	rm -rf $(OBJ) $(EXEC)
