@@ -28,9 +28,6 @@
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
-            "options": {
-                "cwd": "${workspaceFolder}/hzllo/"
-            },
             "problemMatcher": [
                 "$gcc"
             ],

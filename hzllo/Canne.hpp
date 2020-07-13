@@ -30,7 +30,6 @@ class Canne
     int getVit();
     int getId();
     
-   
     private:
 
     //atribut
@@ -44,8 +43,5 @@ class Canne
     //combat
     int c_force;
     int c_vit;
-    
-    
 };
-
 #endif /* Canne_hpp */
