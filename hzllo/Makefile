@@ -1,6 +1,6 @@
 CXX = g++
-CXXFLAGS = -pedantic -std=c++11
-LDFLAGS = -lgdi32
+CXXFLAGS = -pedantic -ansi -std=c++11
+LDFLAGS = 
 
 SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
@@ -8,13 +8,11 @@ EXEC = hzllo
 
 all: $(EXEC)
 
-# $(EXEC): $(OBJ)
-# 	$(CXX) -o $@ $^
 hzllo: $(OBJ)
 	$(CXX) -o $(EXEC) $^ $(LDFLAGS)
 
 %.o: %.cpp
-	$(CXX) -c -o $@ $^ $(CXXFLAGS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 clean:
 	rm -rf $(OBJ) $(EXEC)
