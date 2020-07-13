@@ -31,10 +31,23 @@
             "problemMatcher": [
                 "$gcc"
             ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Make all",
+            "command": "mingw32-make.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Make clean",
+            "command": "mingw32-make.exe clean",
+            "group": "build"
         },
         {
             "type": "shell",
