@@ -22,22 +22,17 @@
 using namespace std;
 
 Joueur combat (Joueur j,int t,Monde m)
-
 {
     //initialisation
     int capture=0;
     int escape=0;
     int choixCanne;
     int tour=1;
-    
     int iValid;
-    
     int choiAddMus=0;
-    
     int captMus=0;
    
     // Zone z;
-    
     Canne canne;
     Bateau batJ=j.useBat();
     Muse muse=j.getMuse();
@@ -129,6 +124,7 @@ Joueur combat (Joueur j,int t,Monde m)
             iValid = 0;
     }
     
+    // Switch ? enum ?
     if(choixCanne==1)
     {
         canne=j.useCanneF();
@@ -149,7 +145,7 @@ Joueur combat (Joueur j,int t,Monde m)
         cin.ignore();
     }
     
-    //choi appat
+    //choix appat
     if(j.getTailleTabAppat()>0)
     {
         cout<<"Vouslez vous utiliser un appat ? "<<endl<<endl;
