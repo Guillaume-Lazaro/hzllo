@@ -186,7 +186,7 @@ void texteMenu(Monde a,Joueur b)
    
    a.infoMonde();
     
-    Muse mTempo = b.getMuse();
+    Musee mTempo = b.getMuse();
     mTempo.modifGoldJourTotal();
     
     cout<<"Gain du musee : "<< mTempo.getGoldJourTotal() <<endl;

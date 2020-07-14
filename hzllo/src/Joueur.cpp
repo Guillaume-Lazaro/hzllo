@@ -314,13 +314,13 @@ int Joueur::supQttAppat(int id)
 
 
 
-Muse Joueur::getMuse()
+Musee Joueur::getMuse()
 {
     return j_muse;
 }
 
 
-void Joueur::addMuse(Muse m)
+void Joueur::addMuse(Musee m)
 {
     j_muse=m;
 }

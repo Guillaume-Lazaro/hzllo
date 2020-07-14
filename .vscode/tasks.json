@@ -15,6 +15,13 @@
             "command": "mingw32-make.exe --directory=hzllo/ clean",
             "group": "build",
             "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Run",
+            "command": "${workspaceFolderBasename}/bin/hzllo.exe",
+            "group": "build",
+            "problemMatcher": []
         }
     ],
     "version": "2.0.0"

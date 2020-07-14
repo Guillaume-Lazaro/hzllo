@@ -1,13 +1,13 @@
 //
-//  Muse.hpp
+//  Musee.hpp
 //  hzllo
 //
 //  Created by UNAL COLIN on 13/04/2020.
 //  Copyright © 2020 UNAL COLIN. All rights reserved.
 //
 
-#ifndef Muse_hpp
-#define Muse_hpp
+#ifndef Musee_hpp
+#define Musee_hpp
 
 #include <stdio.h>
 #include <string>
@@ -16,12 +16,12 @@
 #include "Aquoi.hpp"
 #include "Poisson.hpp"
 
-class Muse
+class Musee
 {
     public:
     
     //constructeur
-    Muse();
+    Musee();
     
     //methode
     int getnbAquoi();

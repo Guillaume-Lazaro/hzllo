@@ -17,7 +17,7 @@
 		3BB1F38F2444D77600A339C7 /* Joueur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F38D2444D77600A339C7 /* Joueur.cpp */; };
 		3BB1F3922444DA1700A339C7 /* Monde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F3902444DA1700A339C7 /* Monde.cpp */; };
 		3BB1F3952444DAF600A339C7 /* Aquoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F3932444DAF600A339C7 /* Aquoi.cpp */; };
-		3BB1F3982444DDC200A339C7 /* Muse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F3962444DDC200A339C7 /* Muse.cpp */; };
+		3BB1F3982444DDC200A339C7 /* Musee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F3962444DDC200A339C7 /* Musee.cpp */; };
 		3BB1F39B2444DECB00A339C7 /* Zone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F3992444DECB00A339C7 /* Zone.cpp */; };
 		3BB1F39E2444E52500A339C7 /* Tournois.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F39C2444E52500A339C7 /* Tournois.cpp */; };
 		3BB1F3A12446366A00A339C7 /* Caractere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1F39F2446366A00A339C7 /* Caractere.cpp */; };
@@ -61,8 +61,8 @@
 		3BB1F3912444DA1700A339C7 /* Monde.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Monde.hpp; sourceTree = "<group>"; };
 		3BB1F3932444DAF600A339C7 /* Aquoi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Aquoi.cpp; sourceTree = "<group>"; };
 		3BB1F3942444DAF600A339C7 /* Aquoi.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Aquoi.hpp; sourceTree = "<group>"; };
-		3BB1F3962444DDC200A339C7 /* Muse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Muse.cpp; sourceTree = "<group>"; };
-		3BB1F3972444DDC200A339C7 /* Muse.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Muse.hpp; sourceTree = "<group>"; };
+		3BB1F3962444DDC200A339C7 /* Musee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Musee.cpp; sourceTree = "<group>"; };
+		3BB1F3972444DDC200A339C7 /* Musee.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Musee.hpp; sourceTree = "<group>"; };
 		3BB1F3992444DECB00A339C7 /* Zone.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Zone.cpp; sourceTree = "<group>"; };
 		3BB1F39A2444DECB00A339C7 /* Zone.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Zone.hpp; sourceTree = "<group>"; };
 		3BB1F39C2444E52500A339C7 /* Tournois.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tournois.cpp; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 				3BB1F39D2444E52500A339C7 /* Tournois.hpp */,
 				3BB1F3932444DAF600A339C7 /* Aquoi.cpp */,
 				3BB1F3942444DAF600A339C7 /* Aquoi.hpp */,
-				3BB1F3962444DDC200A339C7 /* Muse.cpp */,
-				3BB1F3972444DDC200A339C7 /* Muse.hpp */,
+				3BB1F3962444DDC200A339C7 /* Musee.cpp */,
+				3BB1F3972444DDC200A339C7 /* Musee.hpp */,
 				3BB1F3992444DECB00A339C7 /* Zone.cpp */,
 				3BB1F39A2444DECB00A339C7 /* Zone.hpp */,
 				3BB1F3A82447336200A339C7 /* Attaque.cpp */,
@@ -227,7 +227,7 @@
 				3BB1F39B2444DECB00A339C7 /* Zone.cpp in Sources */,
 				3BB1F3892444D61900A339C7 /* Bateau.cpp in Sources */,
 				3BB1F39E2444E52500A339C7 /* Tournois.cpp in Sources */,
-				3BB1F3982444DDC200A339C7 /* Muse.cpp in Sources */,
+				3BB1F3982444DDC200A339C7 /* Musee.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

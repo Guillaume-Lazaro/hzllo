@@ -9,7 +9,7 @@
 #include "magasin.hpp"
 #include "Joueur.hpp"
 #include "Canne.hpp"
-#include "Muse.hpp"
+#include "Musee.hpp"
 #include "Bateau.hpp"
 #include "Poisson.hpp"
 #include <iostream>
@@ -417,7 +417,7 @@ while(exit==0)
             
             case 5:
             {
-                Muse mj=j.getMuse();
+                Musee mj=j.getMuse();
                 
                 cout<<"C est donc le muse que tu veux agrandir ..."<<endl;
                 cin.ignore();
@@ -483,7 +483,7 @@ while(exit==0)
             
             case 6:
             {
-                Muse maj=j.getMuse();
+                Musee maj=j.getMuse();
                 
                 cout<<"Tu compte acheter un nouvel aquoirium ?"<<endl;
                 cin.ignore();

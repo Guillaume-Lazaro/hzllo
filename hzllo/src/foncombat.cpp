@@ -12,7 +12,7 @@
 #include "Joueur.hpp"
 #include "Attaque.hpp"
 #include "Bateau.hpp"
-#include "Muse.hpp"
+#include "Musee.hpp"
 #include "Zone.hpp"
 #include "foncTournois.hpp"
 #include <iostream>
@@ -35,7 +35,7 @@ Joueur combat (Joueur j,int t,Monde m)
     // Zone z;
     Canne canne;
     Bateau batJ=j.useBat();
-    Muse muse=j.getMuse();
+    Musee muse=j.getMuse();
 
     int choiZone=1;
     int resJoueur=0;

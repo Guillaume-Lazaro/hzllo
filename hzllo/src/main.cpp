@@ -25,12 +25,12 @@ int main() {
     Monde monde;
     Joueur player;
     Canne canne;
-    Muse muse;
+    Musee muse;
     player.addCanneF(canne);
     player.addCanneV(canne);
     player.addMuse(muse);
     
-    Muse mTempo;
+    Musee mTempo;
     
     int iValid;
     

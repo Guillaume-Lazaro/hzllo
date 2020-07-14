@@ -1,12 +1,12 @@
 //
-//  Muse.cpp
+//  Musee.cpp
 //  hzllo
 //
 //  Created by UNAL COLIN on 13/04/2020.
 //  Copyright © 2020 UNAL COLIN. All rights reserved.
 //
 
-#include "Muse.hpp"
+#include "Musee.hpp"
 #include "Aquoi.hpp"
 #include "Poisson.hpp"
 #include <vector>
@@ -14,7 +14,7 @@
 using namespace std;
 
 
-Muse::Muse()
+Musee::Musee()
 {
     m_taille=3;
     m_goldJourTotal=0;
@@ -22,7 +22,7 @@ Muse::Muse()
 
 
 
-void Muse::addAquoi()
+void Musee::addAquoi()
 {
     if(m_aquoi.size()<m_taille)
     {
@@ -33,7 +33,7 @@ void Muse::addAquoi()
 
 
 
-void Muse::modifGoldJourTotal()
+void Musee::modifGoldJourTotal()
 {
     m_goldJourTotal=0;
     Aquoi ma;
@@ -47,14 +47,14 @@ void Muse::modifGoldJourTotal()
 
 
 
-int Muse::getGoldJourTotal()
+int Musee::getGoldJourTotal()
 {
     return m_goldJourTotal;
 }
 
 
 
-int Muse::addPoissonMuse(Poisson p)
+int Musee::addPoissonMuse(Poisson p)
 {
     int id=0;
     int test=1;
@@ -106,23 +106,23 @@ int Muse::addPoissonMuse(Poisson p)
 
 
 
-void Muse::upTaille()
+void Musee::upTaille()
 {
     m_taille+=3;
 }
 
-int Muse::getTaille()
+int Musee::getTaille()
 {
     return m_taille;
 }
 
-int Muse::getnbAquoi()
+int Musee::getnbAquoi()
 {
     int nb=m_aquoi.size();
     return nb;
 }
 
-void Muse::showMuse()
+void Musee::showMuse()
 {
     cout<<"Bienvenu dans votre muse !"<<endl;
     cin.ignore();
@@ -150,7 +150,7 @@ void Muse::showMuse()
     
 }
 
-void Muse::modiAquoi(int i, Aquoi a)
+void Musee::modiAquoi(int i, Aquoi a)
 {
     m_aquoi [i]=a;
 }

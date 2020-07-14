@@ -17,7 +17,7 @@
 #include "Bateau.hpp"
 #include "Appat.hpp"
 #include "Poisson.hpp"
-#include "Muse.hpp"
+#include "Musee.hpp"
 
 
 class Joueur
@@ -73,8 +73,8 @@ class Joueur
     void listZoneAppat(int zone);
     int supQttAppat(int id);
     
-    Muse getMuse();
-    void addMuse(Muse m);
+    Musee getMuse();
+    void addMuse(Musee m);
    
     private:
     //attribut
@@ -84,7 +84,7 @@ class Joueur
     Canne canneF;
     Canne canneV;
     Bateau j_bateau;
-    Muse j_muse;
+    Musee j_muse;
     
     //Tournois j_tournois;
     std::list <Poisson> j_pokedex;
