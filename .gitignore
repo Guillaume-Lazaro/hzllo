@@ -1,2 +1,8 @@
-hzllo/bin/*
-hzllo/src/obj/*
+*.exe
+*.exec
+*.o
+*.DS_Store
+hzllo.xcodeproj/xcuserdata/Colin.xcuserdatad/xcschemes/xcschememanagement.plist
+hzllo.xcodeproj/project.pbxproj
+hzllo.xcodeproj/project.xcworkspace/xcuserdata/Colin.xcuserdatad/UserInterfaceState.xcuserstate
+hzllo.xcodeproj/project.xcworkspace/xcuserdata/Colin.xcuserdatad/WorkspaceSettings.xcsettings
