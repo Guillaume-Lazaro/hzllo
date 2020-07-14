@@ -14,7 +14,7 @@ using namespace std;
 
 Appat::Appat()
 {
-    
+    cin << "Yop";
 }
 
 
