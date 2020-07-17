@@ -32,7 +32,7 @@ int main() {
     
     Musee mTempo;
     
-    int iValid;
+    bool invalidInput;
     
     string nomMonde;
     string nomJoueur;
@@ -41,28 +41,32 @@ int main() {
     int goldJ=0;
     
     // intro
-    introTexte();
+    // introTexte();
     
+    ////TESTS
     // creation monde
-    creatMondeTexte();
-    cin >> nomMonde;
-    monde.addNomMonde(nomMonde);
-    
+    // creatMondeTexte();
+    // cin >> nomMonde;
+    // monde.addNomMonde(nomMonde);    //setter
+    monde.addNomMonde("test");
+
     //creation joueur
-    creatJoueurtexte();
-    cin >> nomJoueur;
-    player.addNomJoueur(nomJoueur);
-    creatJoueurtexteFin();
+    // creatJoueurtexte();
+    // cin >> nomJoueur;
+    // player.addNomJoueur(nomJoueur); //setter
+    player.addNomJoueur("testeur");
+    // creatJoueurtexteFin();
     
     //Debut du jeux !!!
     bool exit=false;
     while(exit!=true) {
-        iValid = 1 ;
+        // invalidInput = 1 ;   //Inutile -> refacto controle input 
         
+        //Intro donc pas à placer ici
         mTempo=player.getMuse();
         mTempo.modifGoldJourTotal();
         goldJ=mTempo.getGoldJourTotal();
-        player.addGold(goldJ);
+        player.addGold(goldJ);  //setter
         
         
         monde.upJour();
@@ -71,19 +75,17 @@ int main() {
         
         texteMenu(monde,player);
 
-                
+        //Vérif erreur ==> à refacto ?
         cin>>choiAction;
-
-        
-        iValid = 1 ;
-        while (iValid == 1) {
+        invalidInput = true;
+        while (invalidInput == true) {
             if (cin.fail()) {
                 cin.clear();
                 cin.ignore();
-                cout<<"Erreur!"<<endl;
+                cout<<"Erreur de frappe ducon!"<<endl;
                 cin>>choiAction;
             } else {
-                iValid = 0;
+                invalidInput = false;
             }
         }
         
