@@ -52,8 +52,6 @@ int Musee::getGoldJourTotal()
     return m_goldJourTotal;
 }
 
-
-
 int Musee::addPoissonMuse(Poisson p)
 {
     int id=0;

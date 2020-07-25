@@ -47,9 +47,6 @@ void Joueur::infoJoueur()
    cin.ignore();
 }
 
-
-
-
 //magasin et vente poisson
 float Joueur::getGold()
 {
@@ -95,10 +92,6 @@ Bateau Joueur::useBat()
 }
 
 
-
-
-
-
 void Joueur::addPokedex(Poisson p)
 {
     j_pokedex.push_front(p);
@@ -118,14 +111,14 @@ Poisson Joueur::selecPoisson(int a)
 {
     int numPok=0;
     Poisson monpoisson;
-   for(auto& p : j_pokedex)
-   {
-       numPok+=1;
-       if(numPok==a)
-       {
-           monpoisson=p;
-       }
-   }
+    for(auto& p : j_pokedex)
+    {
+        numPok+=1;
+        if(numPok==a)
+        {
+            monpoisson=p;
+        }
+    }
     return monpoisson ;
 }
  
@@ -187,9 +180,7 @@ int Joueur::verifyDex(Poisson p)
         {
             a=1;
         }
-        
     }
-
     
     return a;
 }
@@ -220,10 +211,7 @@ void Joueur::supPoissonTournois()
    j_tournoisTab.pop_back();
 }
 
-
-
 // appat
-
 void Joueur::addAppatTab(int id)
 {
     Appat a(id);
@@ -244,17 +232,16 @@ void Joueur::supAppat()
 void Joueur::addQttAppat(int id)
 {
     Appat a;
- 
     for(int i=0; i<j_appatTab.size() ;i++)
-        {
+    {
         a=j_appatTab [i];
-        
+
         if(a.getId()==id)
-            {
-                a.addQtt();
-                j_appatTab [i]=a;
-            }
+        {
+            a.addQtt();
+            j_appatTab [i]=a;
         }
+    }
 }
 
 int Joueur::verifyAppat(int id)
@@ -262,15 +249,15 @@ int Joueur::verifyAppat(int id)
     Appat a;
     int verifApp=0;
     
-       for(int i=0; i<j_appatTab.size() ;i++)
-           {
-           a=j_appatTab [i];
-           
-           if(a.getId()==id)
-               {
-                   verifApp=1;
-               }
-           }
+        for(int i=0; i<j_appatTab.size() ;i++)
+        {
+            a=j_appatTab [i];
+            
+            if(a.getId()==id)
+            {
+                verifApp=1;
+            }
+        }
     return verifApp;
 }
 
@@ -278,49 +265,44 @@ void Joueur::listZoneAppat(int zone)
 {
     Appat a;
     
-       for(int i=0; i<j_appatTab.size() ;i++)
-           {
-           a=j_appatTab [i];
-           
-           if(a.getZoneAppat()==zone)
-               {
-                   if(a.getQtt()>0)
-                   {
-                       a.getInfo();
-                   }
-                   
-               }
-           }
+    for(int i=0; i<j_appatTab.size() ;i++)
+        {
+        a=j_appatTab [i];
+        
+        if(a.getZoneAppat()==zone)
+        {
+            if(a.getQtt()>0)
+            {
+                a.getInfo();
+            }
+        }
+    }
 }
 
 int Joueur::supQttAppat(int id)
 {
-   Appat a;
+    Appat a;
     int apPoiss=9;
-      for(int i=0; i<j_appatTab.size() ;i++)
-          {
-          a=j_appatTab [i];
-          
-          if(a.getId()==id)
-              {
-                  a.supQtt();
-                  j_appatTab [i]=a;
-                  apPoiss=a.getNumP();
-              }
-          }
+    for(int i=0 ; i<j_appatTab.size() ; i++)
+    {
+        a=j_appatTab [i];
+        
+        if(a.getId()==id)
+        {
+            a.supQtt();
+            j_appatTab [i]=a;
+            apPoiss=a.getNumP();
+        }
+    }
     return apPoiss;
 }
 
-
-
-
-Musee Joueur::getMuse()
+Musee Joueur::getMusee()
 {
-    return j_muse;
+    return j_musee;
 }
 
-
-void Joueur::addMuse(Musee m)
+void Joueur::addMusee(Musee m)
 {
-    j_muse=m;
+    j_musee=m;
 }

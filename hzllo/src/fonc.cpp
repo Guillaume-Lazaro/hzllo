@@ -180,13 +180,13 @@ void texteMenu(Monde a,Joueur b)
     cout<<"Un nouveau jour commance."<<endl;
     cin.ignore();
     cout<<"Le soleil se leve sur "<< a.getNameMonde() <<endl;
-   cin.ignore();
-   cout<<"Voici les informations de la journee :"<<endl;
-   cin.ignore();
+    cin.ignore();
+    cout<<"Voici les informations de la journee :"<<endl;
+    cin.ignore();
    
-   a.infoMonde();
+    a.infoMonde();
     
-    Musee mTempo = b.getMuse();
+    Musee mTempo = b.getMusee();
     mTempo.modifGoldJourTotal();
     
     cout<<"Gain du musee : "<< mTempo.getGoldJourTotal() <<endl;
@@ -194,7 +194,7 @@ void texteMenu(Monde a,Joueur b)
     
     
     
-   cout<<"Portefeuille : "<< b.getGold() <<endl;
+    cout<<"Portefeuille : "<< b.getGold() <<endl;
     cin.ignore();
    
    if(a.getmJour()>0)

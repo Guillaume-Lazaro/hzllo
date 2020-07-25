@@ -73,8 +73,8 @@ class Joueur
     void listZoneAppat(int zone);
     int supQttAppat(int id);
     
-    Musee getMuse();
-    void addMuse(Musee m);
+    Musee getMusee();
+    void addMusee(Musee m);
    
     private:
     //attribut
@@ -84,7 +84,7 @@ class Joueur
     Canne canneF;
     Canne canneV;
     Bateau j_bateau;
-    Musee j_muse;
+    Musee j_musee;
     
     //Tournois j_tournois;
     std::list <Poisson> j_pokedex;

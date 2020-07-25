@@ -28,7 +28,7 @@ int main() {
     Musee muse;
     player.addCanneF(canne);
     player.addCanneV(canne);
-    player.addMuse(muse);
+    player.addMusee(muse);
     
     Musee mTempo;
     
@@ -39,23 +39,28 @@ int main() {
     
     int choiAction=0;
     int goldJ=0;
+    bool dev = true;
     
     // intro
-    // introTexte();
+    if (dev==false)
+        introTexte();
     
     ////TESTS
     // creation monde
-    // creatMondeTexte();
-    // cin >> nomMonde;
-    // monde.addNomMonde(nomMonde);    //setter
+    if (dev==false)
+        creatMondeTexte();
+    cin >> nomMonde;
+    monde.addNomMonde(nomMonde);    //setter
     monde.addNomMonde("test");
 
     //creation joueur
-    // creatJoueurtexte();
-    // cin >> nomJoueur;
-    // player.addNomJoueur(nomJoueur); //setter
+    if (dev==false)
+        creatJoueurtexte();
+    cin >> nomJoueur;
+    player.addNomJoueur(nomJoueur); //setter
     player.addNomJoueur("testeur");
-    // creatJoueurtexteFin();
+    if (dev==false)
+        creatJoueurtexteFin();
     
     //Debut du jeux !!!
     bool exit=false;
@@ -63,7 +68,7 @@ int main() {
         // invalidInput = 1 ;   //Inutile -> refacto controle input 
         
         //Intro donc pas à placer ici
-        mTempo=player.getMuse();
+        mTempo=player.getMusee();
         mTempo.modifGoldJourTotal();
         goldJ=mTempo.getGoldJourTotal();
         player.addGold(goldJ);  //setter
