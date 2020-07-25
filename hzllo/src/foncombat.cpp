@@ -35,7 +35,7 @@ Joueur combat (Joueur j,int t,Monde m)
     // Zone z;
     Canne canne;
     Bateau batJ=j.useBat();
-    Musee muse=j.getMuse();
+    Musee musee=j.getMusee();
 
     int choiZone=1;
     int resJoueur=0;
@@ -716,95 +716,84 @@ Joueur combat (Joueur j,int t,Monde m)
     
     //recompance
     if (capture==1)
+    {
+        
+        cout<<"Bravo ! Vous avez peche : "<<endl<< p.getNomPoisson()<<endl;
+        cin.ignore();
+        
+        p.calculPrix();
+        cout<< "Son poid est de : "<<p.getPoid()<<" gammes !"<<endl;
+        cout<<"Son prix a la vente est de : "<<p.getPrix()<<" gold !"<<endl;
+        
+        
+        recompance = p.getPrix();
+        j.addGold(recompance);
+        
+        //addpokedex
+        int testId=j.verifyDex(p);
+        
+        if (testId==0)
+        {
+            p.capture();
+            j.addPoissonPoke(p);
+        }
+        
+        if(t==1)
+        {
+            j.addPoissonTab(p);
+        }
+
+        
+        //add musee si aquoirium dispo
+
+        
+        if(musee.getnbAquoi()>0)
         {
             
-            cout<<"Bravo ! Vous avez peche : "<<endl<< p.getNomPoisson()<<endl;
-            cin.ignore();
-            
-            p.calculPrix();
-            cout<< "Son poid est de : "<<p.getPoid()<<" gammes !"<<endl;
-            cout<<"Son prix a la vente est de : "<<p.getPrix()<<" gold !"<<endl;
+            cout<<"Voulez vous ajouter ce poisson au musée ?"<<endl;
+            cout<<"1 : oui"<<endl;
+            cout<<"2 : non"<<endl;
             
             
-            recompance = p.getPrix();
-            j.addGold(recompance);
             
-            //addpokedex
-            int testId=j.verifyDex(p);
-            
-            if (testId==0)
+            cin>>choiAddMus;
+            iValid = 1 ;
+            while (iValid == 1)
             {
-                p.capture();
-                j.addPoissonPoke(p);
-            }
-            
-            if(t==1)
-            {
-                j.addPoissonTab(p);
-            }
-
-            
-            //add musee si aquoirium dispo
-
-            
-            if(muse.getnbAquoi()>0)
-            {
-                
-                cout<<"Voulez vous ajouter ce poisson au muse ?"<<endl;
-                cout<<"1 : oui"<<endl;
-                cout<<"2 : non"<<endl;
-                
-                
-                
-                cin>>choiAddMus;
-                iValid = 1 ;
-                while (iValid == 1)
+                if (cin.fail())
                 {
-                        if (cin.fail())
-                        {
-                                cin.clear();
-                                cin.ignore();
-                                cout<<"Erreur!"<<endl;
-                                cin>>choiAddMus;
-                        }
-                        else
-                                iValid = 0;
+                    cin.clear();
+                    cin.ignore();
+                    cout<<"Erreur!"<<endl;
+                    cin>>choiAddMus;
                 }
-                
-                // manque verif aquoi vide dispo
-                
-               
-                
-                if(choiAddMus==1)
-                {
-               
-                    
-                    captMus=muse.addPoissonMuse(p);
-                    
-                    if(captMus==1)
-                    {
-                        cout<<"Vous avez deja ce poisson dans votre muse ou vous n'avez plus de place"<<endl;
-                        cin.ignore();
-                        j.supGold(recompance);
-                    }
-                    else
-                    {
-                        cout<<"Le poisson a etait ajoute au musee !!!"<<endl;
-                        cin.ignore();
-                    }
-
-                    j.addMuse(muse);
-                    
-                }
+                else
+                    iValid = 0;
             }
             
+            // manque verif aquoi vide dispo
             
-            
+            if(choiAddMus==1)
+            {
+                captMus=musee.addPoissonMusee(p);
+                
+                if(captMus==1)
+                {
+                    cout<<"Vous avez deja ce poisson dans votre muse ou vous n'avez plus de place"<<endl;
+                    cin.ignore();
+                    j.supGold(recompance);
+                }
+                else
+                {
+                    cout<<"Le poisson a etait ajoute au musee !!!"<<endl;
+                    cin.ignore();
+                }
+
+                j.addMusee(musee);
+                
+            }
         }
-    
-    
-    
+    }
     p.~Poisson();
-    
     return j;
 }

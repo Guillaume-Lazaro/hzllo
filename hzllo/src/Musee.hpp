@@ -31,10 +31,10 @@ class Musee
     void modifGoldJourTotal();
     void upTaille();
     
-    int addPoissonMuse(Poisson p);
+    int addPoissonMusee(Poisson p);
     int getTaille();
     
-    void showMuse();
+    void showMusee();
     
     void modiAquoi(int i, Aquoi a);
     

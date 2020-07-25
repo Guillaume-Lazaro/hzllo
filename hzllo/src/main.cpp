@@ -39,27 +39,34 @@ int main() {
     
     int choiAction=0;
     int goldJ=0;
-    bool dev = true;
+    player.setDev(true);
     
     // intro
-    if (dev==false)
+    if (player.getDev()==false)
         introTexte();
     
     ////TESTS
     // creation monde
-    if (dev==false)
+    if (player.getDev()==false)
+    {
         creatMondeTexte();
-    cin >> nomMonde;
-    monde.addNomMonde(nomMonde);    //setter
-    monde.addNomMonde("test");
+        cin >> nomMonde;
+        monde.addNomMonde(nomMonde);    //setter
+    }
+    else 
+        monde.addNomMonde("test");
 
     //creation joueur
-    if (dev==false)
+    if (player.getDev()==false)
+    {
         creatJoueurtexte();
-    cin >> nomJoueur;
-    player.addNomJoueur(nomJoueur); //setter
-    player.addNomJoueur("testeur");
-    if (dev==false)
+        cin >> nomJoueur;
+        player.addNomJoueur(nomJoueur); //setter
+    }
+    else
+        player.addNomJoueur("testeur");
+
+    if (player.getDev()==false)
         creatJoueurtexteFin();
     
     //Debut du jeux !!!
@@ -112,7 +119,7 @@ int main() {
             }
                 
             case 4: {
-                mTempo.showMuse();
+                mTempo.showMusee();
                 break;
             }
                 

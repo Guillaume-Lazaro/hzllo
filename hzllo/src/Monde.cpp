@@ -46,7 +46,7 @@ void Monde::infoMonde()
 {
     cout<<"//////////////////////////"<<endl;
     cout<<"Calandrier : jour n°"<< m_jour <<endl;
-    cout<<"Meteo du jour : ";
+    cout<<"Météo du jour : ";
     if(m_meteo==1)
     {
         cout<<"grand soleil !"<<endl;
@@ -100,7 +100,6 @@ int Monde::getmJour()
 {
     return m_jour;
 }
-
 
 void Monde::selecPoissonT(Joueur j)
 {

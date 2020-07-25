@@ -105,22 +105,22 @@ void creatMondeTexte()
 void creatJoueurtexte()
 {
     cout<<"..."<<endl;
-      cin.ignore();
-      cout<<"Vous entrez dans la cabane ..."<<endl;
-      cin.ignore();
-      cout<<"Vos souvenirs d'enfance refont surface"<<endl;
-      cin.ignore();
-      cout<<"Peu de chose trainent, vous apercevez dans ce petit entrepot"<<endl;
-      cout<<"une petite barque ainsi que cette fameuse vieille boite de pêche"<<endl;
-      cin.ignore();
-      cout<<"Une larme coule le long de votre joue"<<endl;
-      cin.ignore();
-      cout<<"Il y a 8 ans,vous n'aviez maleureusement pas pu assister à l'enterrement de votre grand père à cause d'une reunion importante"<<endl;
-      cin.ignore();
-      cout<<"Sa maison a été vendue pour partager l'heritage"<<endl;
-      cin.ignore();
-      cout<<"il ne vous reste que cette petite cabane accompagnée d'une mare comme souvenir"<<endl;
-      cin.ignore();
+    cin.ignore();
+    cout<<"Vous entrez dans la cabane ..."<<endl;
+    cin.ignore();
+    cout<<"Vos souvenirs d'enfance refont surface"<<endl;
+    cin.ignore();
+    cout<<"Peu de chose trainent, vous apercevez dans ce petit entrepot"<<endl;
+    cout<<"une petite barque ainsi que cette fameuse vieille boite de pêche"<<endl;
+    cin.ignore();
+    cout<<"Une larme coule le long de votre joue"<<endl;
+    cin.ignore();
+    cout<<"Il y a 8 ans,vous n'aviez maleureusement pas pu assister à l'enterrement de votre grand père à cause d'une reunion importante"<<endl;
+    cin.ignore();
+    cout<<"Sa maison a été vendue pour partager l'heritage"<<endl;
+    cin.ignore();
+    cout<<"il ne vous reste que cette petite cabane accompagnée d'une mare comme souvenir"<<endl;
+    cin.ignore();
 
     cout<<"Le coeur lourd, vous prenez une decision, LA DECISION"<<endl;
     cin.ignore();
@@ -129,12 +129,12 @@ void creatJoueurtexte()
     cout<<"Et pour vous racheter après de vous même,"<<endl;
     cin.ignore();
 
-      cout<<"Vous avez décider de vous inscrire,"<<endl;
-      cout<<"dans le répertoire des pêcheurs de la region"<<endl;
-      cin.ignore();
+    cout<<"Vous avez décider de vous inscrire,"<<endl;
+    cout<<"dans le répertoire des pêcheurs de la region"<<endl;
+    cin.ignore();
     cout<<"Et d'en faire votre nouvelle activité"<<endl;
     cin.ignore();
-      cout << "Entrez votre nom (sans espace) jeune pêcheur :" << endl;
+    cout << "Entrez votre nom (sans espace) jeune pêcheur :" << endl;
 }
 
 void creatJoueurtexteFin()
@@ -155,9 +155,6 @@ void creatJoueurtexteFin()
     cin.ignore();
     cout <<"******************************"<<endl;
     cin.ignore();
-    
-    
-    
 }
 
 void exittexte()
@@ -173,61 +170,61 @@ void exittexte()
 }
 
 
-void texteMenu(Monde a,Joueur b)
+void texteMenu(Monde monde,Joueur player)
 {
-    cout<<endl<<"//////////////////////////"<<endl<<endl;
-    cin.ignore();
-    cout<<"Un nouveau jour commance."<<endl;
-    cin.ignore();
-    cout<<"Le soleil se leve sur "<< a.getNameMonde() <<endl;
-    cin.ignore();
-    cout<<"Voici les informations de la journee :"<<endl;
-    cin.ignore();
+    if(player.getDev()) {
+        cout<<endl<<"//////////////////////////"<<endl<<endl;
+        cin.ignore();
+        cout<<"Un nouveau jour commence."<<endl;
+        cin.ignore();
+        cout<<"Le soleil se lève sur "<< monde.getNameMonde() <<endl;
+        cin.ignore();
+        cout<<"Voici les informations de la journée :"<<endl;
+        cin.ignore();
+    }
    
-    a.infoMonde();
+    monde.infoMonde();
     
-    Musee mTempo = b.getMusee();
+    Musee mTempo = player.getMusee();
     mTempo.modifGoldJourTotal();
     
-    cout<<"Gain du musee : "<< mTempo.getGoldJourTotal() <<endl;
+    cout<<"Gain du musée : "<< mTempo.getGoldJourTotal() <<endl;
     cin.ignore();
     
-    
-    
-    cout<<"Portefeuille : "<< b.getGold() <<endl;
+    cout<<"Portefeuille : "<< player.getGold() <<endl;
     cin.ignore();
    
-   if(a.getmJour()>0)
-   {
-       cout<<"1 : Allez pecher"<<endl;
-   }
-   
-   if(a.getmJour()>0)
-   {
-       cout<<"2 : PoissonDex, se rendre a l'universitee des poissons"<<endl;
-   }
-   
-   if(a.getmJour()>2)
-   {
-       cout<<"3 : $$ Super Fishing Shop $$"<<endl;
-   }
-   
-   if(a.getmJour()>6)
-   {
-       cout<<"4 : Votre musee d'aquoirium"<<endl;
-   }
-   
-   
-   if(a.getmJour()==a.getJourTournois())
-   {
-       cout<<"5 : Tournois du moment"<<endl;
-   }
-   
-   if(a.getmJour()>0)
-   {
-       cout<<"6 : Sortir du jeu la queu entre les jambes"<<endl<<endl;
-   }
-   
-   cout<<"Que voulez vous faire aujourd'hui ?"<<endl;
-   cout<<"faite votre choix :"<<endl;
+    if(monde.getmJour()>0)
+    {
+        cout<<"1 : Allez pêcher"<<endl;
+    }
+    
+    if(monde.getmJour()>0)
+    {
+        cout<<"2 : PoissonDex, se rendre a l'université des poissons"<<endl;
+    }
+    
+    if(monde.getmJour()>2)
+    {
+        cout<<"3 : $$ Super Fishing Shop $$"<<endl;
+    }
+    
+    if(monde.getmJour()>6)
+    {
+        cout<<"4 : Votre musée d'aquarium"<<endl;
+    }
+    
+    
+    if(monde.getmJour()==monde.getJourTournois())
+    {
+        cout<<"5 : Tournois du moment"<<endl;
+    }
+    
+    if(monde.getmJour()>0)
+    {
+        cout<<"6 : Sortir du jeu la queue entre les jambes"<<endl<<endl;
+    }
+    
+    cout<<"Que voulez vous faire aujourd'hui ?"<<endl;
+    cout<<"faite votre choix :"<<endl;
 }

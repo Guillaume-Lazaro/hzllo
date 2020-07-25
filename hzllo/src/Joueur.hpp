@@ -63,7 +63,6 @@ class Joueur
 
     int getTailleTabTournois();
     void supPoissonTournois();
-
     
     void addAppatTab(int id);
     int getTailleTabAppat();
@@ -72,6 +71,8 @@ class Joueur
     int verifyAppat(int id);
     void listZoneAppat(int zone);
     int supQttAppat(int id);
+    bool getDev();
+    void setDev(bool dev);
     
     Musee getMusee();
     void addMusee(Musee m);
@@ -80,6 +81,7 @@ class Joueur
     //attribut
     std::string j_nom;
     float j_gold;
+    bool j_dev;
     
     Canne canneF;
     Canne canneV;

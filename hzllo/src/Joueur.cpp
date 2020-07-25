@@ -22,6 +22,7 @@ Joueur::Joueur()
 {
     j_gold=5;
     Bateau j_bateau;
+    j_dev = false;
 }
 
 
@@ -37,14 +38,14 @@ string Joueur::getName()
 
 void Joueur::infoJoueur()
 {
-   cout<<"//////////////////////////"<<endl;
-   cout<<"Portefeuille : "<< j_gold <<endl;
+    cout<<"//////////////////////////"<<endl;
+    cout<<"Portefeuille : "<< j_gold <<endl;
     cout<<"Nom du joueur : "<< j_nom <<endl;
     cout<<"votre bateau : " << endl;
-   cout<<"liste des cannes : " << endl;
-   cout<<"listes des appats : " << endl;
-   cout<<"//////////////////////////"<<endl;
-   cin.ignore();
+    cout<<"liste des cannes : " << endl;
+    cout<<"listes des appats : " << endl;
+    cout<<"//////////////////////////"<<endl;
+    cin.ignore();
 }
 
 //magasin et vente poisson
@@ -266,7 +267,7 @@ void Joueur::listZoneAppat(int zone)
     Appat a;
     
     for(int i=0; i<j_appatTab.size() ;i++)
-        {
+    {
         a=j_appatTab [i];
         
         if(a.getZoneAppat()==zone)
@@ -305,4 +306,12 @@ Musee Joueur::getMusee()
 void Joueur::addMusee(Musee m)
 {
     j_musee=m;
+}
+
+bool Joueur::getDev() {
+    return j_dev;
+}
+
+void Joueur::setDev(bool dev) {
+    j_dev = dev;
 }

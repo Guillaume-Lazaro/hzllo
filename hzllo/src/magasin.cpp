@@ -21,19 +21,15 @@ using namespace std;
 Joueur magasin (Joueur j)
 {
     int choiMag;
-    int selecMag;
-    
-    int achatAppat;
-    int debugAppa=0;
+    int confirmationAchat;
     
     int iValid;
-
     
-    int idF;
-    int idV;
-    int idB;
-    
-    int randText;
+    int idCanneForce;
+    int idCanneVitesse;
+    int idBateauateau;
+    int idAppat;
+    int debugAppat=0;
     
     int exit=0;
     
@@ -41,12 +37,12 @@ Joueur magasin (Joueur j)
     cin.ignore();
     cout<<"J'ai tout ce qu'il te faut pour pesquer"<<endl;
     cin.ignore();
-    cout<<"Si tu tabanege, n'hesite pas tu en aura toujours l'utilitee !"<<endl;
+    cout<<"Si tu tabanege, n'hésite pas tu en aura toujours l'utilité !"<<endl;
     cin.ignore();
     
     
     srand((unsigned int)time(0));
-    randText= 1 + rand() % 12;
+    int randText= 1 + rand() % 12;
     
     if(randText==1)
     {
@@ -107,26 +103,26 @@ while(exit==0)
     cout<<"4 : Les differents appats"<<endl;
     cout<<"5 : Agrandir le musee"<<endl;
     cout<<"6 : acheter un nouvel aquoirium"<<endl;
-    cout<<"7 : partir (sorti deffinitive)"<<endl;
-    
-    
+    cout<<"7 : partir (sorti définitive)"<<endl;
+    if(j.getDev() == true)
+        cout<<"8 : Salle des dévellopeurs"<<endl;
     
     cin>>choiMag;
     iValid = 1 ;
     while (iValid == 1)
     {
-            if (cin.fail())
-            {
-                    cin.clear();
-                    cin.ignore();
-                    cout<<"Erreur!"<<endl;
-                    cin>>choiMag;
-            }
-            else
-                    iValid = 0;
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout<<"Erreur!"<<endl;
+            cin>>choiMag;
+        }
+        else
+            iValid = 0;
     }
     
-    selecMag=0;
+    confirmationAchat=0;
     
     switch (choiMag)
     {
@@ -134,8 +130,8 @@ while(exit==0)
         {
             Canne canJF;
             canJF=j.useCanneF();
-            idF=1+canJF.getId();
-            Canne newF(idF,1);
+            idCanneForce=1+canJF.getId();
+            Canne newF(idCanneForce,1);
             cout<<"J'ai cette tres SOLIDE canne a te proposer :"<<endl;
             cin.ignore();
             cout<<"C'est une canne de categorie : "<< newF.getId()<<endl;
@@ -150,22 +146,23 @@ while(exit==0)
                 cout<<"2 : non"<<endl;
                 
                 
-                cin>>selecMag;
+                cin>>confirmationAchat;
+
                 iValid = 1 ;
                 while (iValid == 1)
                 {
-                        if (cin.fail())
-                        {
-                                cin.clear();
-                                cin.ignore();
-                                cout<<"Erreur!"<<endl;
-                                cin>>selecMag;
-                        }
-                        else
-                                iValid = 0;
+                    if (cin.fail())
+                    {
+                            cin.clear();
+                            cin.ignore();
+                            cout<<"Erreur!"<<endl;
+                            cin>>confirmationAchat;
+                    }
+                    else
+                        iValid = 0;
                 }
                 
-                if(selecMag==1)
+                if(confirmationAchat==1)
                 {
                     j.supGold(newF.getPrix());
                     j.addCanneF(newF);
@@ -188,8 +185,8 @@ while(exit==0)
             {
                 Canne canJV;
                 canJV=j.useCanneV();
-                idV=1+canJV.getId();
-                Canne newV(1,idV);
+                idCanneVitesse=1+canJV.getId();
+                Canne newV(1,idCanneVitesse);
                 cout<<"J'ai cette tres belle canne a te proposer :"<<endl;
                 cin.ignore();
                 cout<<"Fine est souple comme je les aimes"<<endl;
@@ -206,7 +203,7 @@ while(exit==0)
                     cout<<"2 : non"<<endl;
                     
                     
-                    cin>>selecMag;
+                    cin>>confirmationAchat;
                     iValid = 1 ;
                     while (iValid == 1)
                     {
@@ -215,13 +212,13 @@ while(exit==0)
                                     cin.clear();
                                     cin.ignore();
                                     cout<<"Erreur!"<<endl;
-                                    cin>>selecMag;
+                                    cin>>confirmationAchat;
                             }
                             else
                                     iValid = 0;
                     }
                     
-                    if(selecMag==1)
+                    if(confirmationAchat==1)
                     {
                         j.supGold(newV.getPrix());
                         j.addCanneV(newV);
@@ -244,8 +241,8 @@ while(exit==0)
             {
                 Bateau batJ;
                 batJ=j.useBat();
-                idB= 1+batJ.getId();
-                Bateau newB(idB);
+                idBateauateau= 1+batJ.getId();
+                Bateau newB(idBateauateau);
                 cout<<"A, tu cherche un nouveau bateau ?"<<endl;
                 cin.ignore();
                 cout<<"Explorer de nouvelles eau est l'essance de la peche"<<endl;
@@ -262,22 +259,22 @@ while(exit==0)
                     cout<<"2 : non"<<endl;
                     
                     
-                    cin>>selecMag;
+                    cin>>confirmationAchat;
                     iValid = 1 ;
                     while (iValid == 1)
                     {
-                            if (cin.fail())
-                            {
-                                    cin.clear();
-                                    cin.ignore();
-                                    cout<<"Erreur!"<<endl;
-                                    cin>>selecMag;
-                            }
-                            else
-                                    iValid = 0;
+                        if (cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore();
+                            cout<<"Erreur!"<<endl;
+                            cin>>confirmationAchat;
+                        }
+                        else
+                            iValid = 0;
                     }
                     
-                    if(selecMag==1)
+                    if(confirmationAchat==1)
                     {
                         j.supGold(newB.getPrix());
                         j.upBateau(newB);
@@ -296,19 +293,19 @@ while(exit==0)
              }
             
         case 7:
-            {
-                cout<<"Tu souhaite partir ? Pas de probleme"<<endl;
-                cin.ignore();
-                cout<<"J'espere tu revoir bientot ! Et la prochaine fois,"<<endl;
-                cin.ignore();
-                cout<<"N'oublie pas le ricard !"<<endl;
-                cin.ignore();
-                cout<<"Qui sais, je pourais te faire un prix"<<endl;
-                cin.ignore();
-                exit=1;
-                
-                break;
-            }
+        {
+            cout<<"Tu souhaite partir ? Pas de probleme"<<endl;
+            cin.ignore();
+            cout<<"J'espere tu revoir bientot ! Et la prochaine fois,"<<endl;
+            cin.ignore();
+            cout<<"N'oublie pas le ricard !"<<endl;
+            cin.ignore();
+            cout<<"Qui sais, je pourais te faire un prix"<<endl;
+            cin.ignore();
+            exit=1;
+            
+            break;
+        }
             
         case 4:
         {
@@ -316,52 +313,112 @@ while(exit==0)
             cin.ignore();
             
             for(int i=0; i<j.tailTab(); i++)
+            {
+                Poisson poke = j.getPoissonPoke(i);
+                
+                if(poke.getCapture()==true)
                 {
-                    Poisson poke = j.getPoissonPoke(i);
-                    
-                    if(poke.getCapture()==true)
-                    {
-                        cout<<"Appat n° "<<poke.getId()<<" : "<<poke.getNomPoisson()<<endl;
-                        
-                    }
+                    cout<<"Appat n° "<<poke.getId()<<" : "<<poke.getNomPoisson()<<endl;
                     
                 }
+            }
             cout<<"Choisi le n° de l'appat que tu veux acheuter :"<<endl;
             cout<<"0 : ne pas acheter d'appat"<<endl;
             
             
-            cin>>achatAppat;
+            cin>>idAppat;
             iValid = 1 ;
             while (iValid == 1)
             {
-                    if (cin.fail())
-                    {
-                            cin.clear();
-                            cin.ignore();
-                            cout<<"Erreur!"<<endl;
-                            cin>>achatAppat;
-                    }
-                    else
-                            iValid = 0;
+                if (cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore();
+                    cout<<"Erreur!"<<endl;
+                    cin>>idAppat;
+                }
+                else
+                    iValid = 0;
             }
             
             
-            if(achatAppat>0)
+            if(idAppat>0)
+            {
+                Appat a(idAppat);
+                
+                if(j.getGold()>=a.getPrix())
+                {
+                    cout<<"Cet appat t'interresse ??"<<endl;
+                    cout<<"Il coute "<< a.getPrix() <<endl;
+                    cin.ignore();
+                    cout<<"1 : oui"<<endl;
+                    cout<<"2 : non"<<endl;
+                    
+                    
+                    cin>>confirmationAchat;
+                    iValid = 1 ;
+                    while (iValid == 1)
+                    {
+                        if (cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore();
+                            cout<<"Erreur!"<<endl;
+                            cin>>confirmationAchat;
+                        }
+                        else
+                            iValid = 0;
+                    }
+                    
+                    if(confirmationAchat==1)
+                    {
+                        j.supGold(a.getPrix());
+                        
+                        if(j.verifyAppat(idAppat)==1)
+                        {
+                            //if appat posseder = qtt +1
+                            j.addQttAppat(idAppat);
+                        }
+                        else
+                        {
+                            //if appat non posseder = add appat au tab
+                            j.addAppatTab(idAppat);
+                        }
+                    
+                        cout<<"Haaa ca va en pêcher du poisson avec ca"<<endl;
+                        cin.ignore();
+                    }
+                }
+                else
+                {
+                    cout<<"Humm, malheureusment tu n'as pas assez"<<endl;
+                    cin.ignore();
+                }
+            }
+            break;
+        }
+        case 5:
+        {
+            Musee mj=j.getMusee();
+            
+            cout<<"C est donc le muse que tu veux agrandir ..."<<endl;
+            cin.ignore();
+            cout<<"Tu a un muse de taille :"<< mj.getTaille() << endl;
+            cin.ignore();
+            cout<<"C est 250 pieces pour 3 de taille suplementaire"<<endl;
+            cin.ignore();
+            
+            //verif gold
+            if(j.getGold()>=250)
             {
                 
-            Appat a(achatAppat);
-            
-            
-            if(j.getGold()>=a.getPrix())
-            {
-                cout<<"Cet appat t'interresse ??"<<endl;
-                cout<<"Il coute "<< a.getPrix() <<endl;
+                cout<<"Ca t'interresse ??"<<endl;
                 cin.ignore();
                 cout<<"1 : oui"<<endl;
                 cout<<"2 : non"<<endl;
                 
                 
-                cin>>selecMag;
+                cin>>confirmationAchat;
                 iValid = 1 ;
                 while (iValid == 1)
                 {
@@ -370,201 +427,129 @@ while(exit==0)
                                 cin.clear();
                                 cin.ignore();
                                 cout<<"Erreur!"<<endl;
-                                cin>>selecMag;
+                                cin>>confirmationAchat;
                         }
                         else
                                 iValid = 0;
                 }
                 
-                if(selecMag==1)
+                if(confirmationAchat==1)
                 {
-                    j.supGold(a.getPrix());
-                    
-                    
-                    if(j.verifyAppat(achatAppat)==1)
-                            {
-                                //if appat posseder = qtt +1
-                                j.addQttAppat(achatAppat);
-                            }
-                    else
-                            {
-                                //if appat non posseder = add appat au tab
-                                j.addAppatTab(achatAppat);
-                            }
-                    
-
-                   
-                    cout<<"Haaa ca va en pecher du poisson avec ca"<<endl;
+                    j.supGold(250);
+                    mj.upTaille();
+                    cout<<"Un beau muse est un grand muse !"<<endl;
+                    cin.ignore();
+                    j.addMusee(mj);
+                }
+                else
+                {
+                    cout<<"Tampis ..."<<endl;
                     cin.ignore();
                 }
+                
             }
+            
             else
             {
                 cout<<"Humm, malheureusment tu n'as pas assez"<<endl;
                 cin.ignore();
             }
-            
-            }
 
             break;
         }
             
+        case 6:
+        {
+            Musee maj=j.getMusee();
             
+            cout<<"Tu compte acheter un nouvel aquoirium ?"<<endl;
+            cin.ignore();
+            cout<<"Il te reste "<< (maj.getTaille()-maj.getnbAquoi())<<" place d'aquoirum "<< endl;
+            cin.ignore();
+            cout<<"Pour 50 pieces tu peux partir avec un aquoirium"<<endl;
+            cin.ignore();
             
-            
-            
-            
-            
-            case 5:
+            //verif gold
+            if( (maj.getTaille()-maj.getnbAquoi()) > 0 )
             {
-                Musee mj=j.getMuse();
                 
-                cout<<"C est donc le muse que tu veux agrandir ..."<<endl;
-                cin.ignore();
-                cout<<"Tu a un muse de taille :"<< mj.getTaille() << endl;
-                cin.ignore();
-                cout<<"C est 250 pieces pour 3 de taille suplementaire"<<endl;
-                cin.ignore();
+            
+            
+            if(j.getGold()>=50)
+            {
                 
-                //verif gold
-                if(j.getGold()>=250)
+                cout<<"Ca t'interresse ??"<<endl;
+                cin.ignore();
+                cout<<"1 : oui"<<endl;
+                cout<<"2 : non"<<endl;
+                
+                
+                cin>>confirmationAchat;
+                iValid = 1 ;
+                while (iValid == 1)
                 {
-                    
-                    cout<<"Ca t'interresse ??"<<endl;
-                    cin.ignore();
-                    cout<<"1 : oui"<<endl;
-                    cout<<"2 : non"<<endl;
-                    
-                    
-                    cin>>selecMag;
-                    iValid = 1 ;
-                    while (iValid == 1)
+                    if (cin.fail())
                     {
-                            if (cin.fail())
-                            {
-                                    cin.clear();
-                                    cin.ignore();
-                                    cout<<"Erreur!"<<endl;
-                                    cin>>selecMag;
-                            }
-                            else
-                                    iValid = 0;
-                    }
-                    
-                    if(selecMag==1)
-                    {
-                        j.supGold(250);
-                        mj.upTaille();
-                        cout<<"Un beau muse est un grand muse !"<<endl;
+                        cin.clear();
                         cin.ignore();
-                        j.addMuse(mj);
+                        cout<<"Erreur!"<<endl;
+                        cin>>confirmationAchat;
                     }
                     else
-                    {
-                        cout<<"Tampis ..."<<endl;
-                        cin.ignore();
-                    }
-                    
+                        iValid = 0;
                 }
                 
+                if(confirmationAchat==1)
+                {
+                    j.supGold(50);
+                    maj.addAquoi();
+                    cout<<"Un bon muse est un muse bien garnit !"<<endl;
+                    cin.ignore();
+                    
+                    
+                    j.addMusee(maj);
+                }
                 else
                 {
-                    cout<<"Humm, malheureusment tu n'as pas assez"<<endl;
+                    cout<<"Tampis ..."<<endl;
                     cin.ignore();
                 }
-
-                break;
+                
             }
             
-            
-            
-            
-            
-            
-            case 6:
+            else
             {
-                Musee maj=j.getMuse();
-                
-                cout<<"Tu compte acheter un nouvel aquoirium ?"<<endl;
+                cout<<"Humm, malheureusment tu n'as pas assez"<<endl;
                 cin.ignore();
-                cout<<"Il te reste "<< (maj.getTaille()-maj.getnbAquoi())<<" place d'aquoirum "<< endl;
-                cin.ignore();
-                cout<<"Pour 50 pieces tu peux partir avec un aquoirium"<<endl;
-                cin.ignore();
-                
-                //verif gold
-                if( (maj.getTaille()-maj.getnbAquoi()) > 0 )
-                {
-                    
-                
-                
-                if(j.getGold()>=50)
-                {
-                    
-                    cout<<"Ca t'interresse ??"<<endl;
-                    cin.ignore();
-                    cout<<"1 : oui"<<endl;
-                    cout<<"2 : non"<<endl;
-                    
-                    
-                    cin>>selecMag;
-                    iValid = 1 ;
-                    while (iValid == 1)
-                    {
-                            if (cin.fail())
-                            {
-                                    cin.clear();
-                                    cin.ignore();
-                                    cout<<"Erreur!"<<endl;
-                                    cin>>selecMag;
-                            }
-                            else
-                                    iValid = 0;
-                    }
-                    
-                    if(selecMag==1)
-                    {
-                        j.supGold(50);
-                        maj.addAquoi();
-                        cout<<"Un bon muse est un muse bien garnit !"<<endl;
-                        cin.ignore();
-                        
-                        
-                        j.addMuse(maj);
-                    }
-                    else
-                    {
-                        cout<<"Tampis ..."<<endl;
-                        cin.ignore();
-                    }
-                    
-                }
-                
-                else
-                {
-                    cout<<"Humm, malheureusment tu n'as pas assez"<<endl;
-                    cin.ignore();
-                }
-                    
-                    
-                }
-                else
-                {
-                    cout<<"Tu n'as plus de place dans ton musee ..."<<endl;
-                    cin.ignore();
-                }
-
-                break;
             }
-            
-            default:
+                
+                
+            }
+            else
+            {
+                cout<<"Tu n'as plus de place dans ton musee ..."<<endl;
+                cin.ignore();
+            }
+
             break;
+        }
+
+        case 8:
+        {
+            cout<<"Tu es un développeur ! Combien d'argent veux-tu ?"<<endl;
+            int argentSupp = 0;
+
+            cin>>argentSupp;
+            j.addGold(argentSupp);
+            j.infoJoueur();
+
+            break;
+        }
+        
+        default:
+        break;
     }
-        
-        
 }
-
-
 
     return j;
 }

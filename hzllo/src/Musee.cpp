@@ -52,7 +52,7 @@ int Musee::getGoldJourTotal()
     return m_goldJourTotal;
 }
 
-int Musee::addPoissonMuse(Poisson p)
+int Musee::addPoissonMusee(Poisson p)
 {
     int id=0;
     int test=1;
@@ -120,7 +120,7 @@ int Musee::getnbAquoi()
     return nb;
 }
 
-void Musee::showMuse()
+void Musee::showMusee()
 {
     cout<<"Bienvenu dans votre muse !"<<endl;
     cin.ignore();
