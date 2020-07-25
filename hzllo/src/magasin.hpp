@@ -14,5 +14,6 @@
 #include "Canne.hpp"
 
 Joueur magasin(Joueur j);
+int verifInput();
 
 #endif /* magasin_hpp */
